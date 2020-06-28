@@ -30,7 +30,7 @@ export default function Home({hotels=[]}) {
                                     sm={12}
                                     xs={12}
                                     key={index}
-                                >
+                                >                               
                                     <HotelCard hotelData={hotelData} />
                                 </Grid>
                             );
@@ -42,7 +42,6 @@ export default function Home({hotels=[]}) {
     );
 }
 export async function getStaticProps() {
-    //const data = "http://localhost:3003/explorer/#!/hotel/hotel_find"
     const res = await fetch('http://localhost:3003/api/hotels')
     const hotels = await res.json()
     return {
