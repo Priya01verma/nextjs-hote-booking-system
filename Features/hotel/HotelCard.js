@@ -17,39 +17,34 @@ const useStyles = makeStyles({
     },
 });
 
-function HotelCard() {
+function HotelCard(props) {
     const classes = useStyles();
-
+    let {hotelData: {name ,description, picture} ={}} = props;
     return (
         <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
                     component="img"
-                    image="https://cdn.collider.com/wp-content/uploads/2018/06/the-hollow-slice-600x200.jpg"
+                    image={picture}
                     title="hotel-images"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        All Hotel Name
+                        {name}
                     </Typography>
                     <Typography
                         variant="body2"
                         color="textSecondary"
                         component="p"
                     >
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
+                       {description}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                    Share
-                </Button>
-                <Button size="small" color="primary">
-                    Learn More
+                    View
                 </Button>
             </CardActions>
         </Card>
