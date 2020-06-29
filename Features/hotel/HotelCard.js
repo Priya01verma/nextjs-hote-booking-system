@@ -13,7 +13,8 @@ function HotelCard(props) {
     const classes = useStyles();
     let { hotelData: { name, description, picture, id } = {} } = props;
     return (
-        <Link href={"[id]"} as={`${id}`}>
+        <Link href={"/hotel-information/[id]"} as={`/hotel-information/${id}`}>
+            <a>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
@@ -41,6 +42,7 @@ function HotelCard(props) {
                     </Button>
                 </CardActions>
             </Card>
+             </a>
         </Link>
     );
 }

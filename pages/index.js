@@ -20,7 +20,7 @@ export default function Home({hotels=[]}) {
                         justify={"left"}
                         alignItems={"center"}
                     >
-                        {hotels.map((hotelData, index) => {
+                        {hotels.map((hotelData) => {
                             return (
                                 <Grid
                                     item
@@ -29,15 +29,15 @@ export default function Home({hotels=[]}) {
                                     md={6}
                                     sm={12}
                                     xs={12}
-                                    key={index}
-                                >                               
+                                    key={hotelData.id}
+                                >                            
                                     <HotelCard hotelData={hotelData} />
                                 </Grid>
                             );
                         })}
                     </Grid>
                 </Box>
-            </Container>
+            </Container>         
         </>
     );
 }
